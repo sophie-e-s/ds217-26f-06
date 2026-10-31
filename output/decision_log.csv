@@ -1,0 +1,10 @@
+table,issue,decision,reason
+patients,exact duplicate rows,removed from file,"The duplicate rows do not provide new information, so they should be removed,"
+patients,gender spellings that are not a code,recoded,"All of the values either made sense with the categories that existed, so they could be easily mapped."
+patients,site codes needing normalization,mapped to dictionary,All of the values listed were easily mapped to one of the three known site codes.
+patients,birth_year sentinel 9999,removed/changed to missing value,These were blanked because they were sentinel values.
+patients,weight column named wt_kg in visits_south.csv,the column was renamed,This was so it could be appended to the visits_north.csv file.
+patients,sbp sentinel 999 and readings outside 70 through 250,removed/set to NA,"These are outlier or sentinel values, the latter of which is a placeholder to be changed."
+patients,impossible and loosely written visit dates,Coerced to datetime or dropped,If dates were not legible as dates they would not be usable for the column type. 
+patients,repeated patient_id and visit pairs,sorted based on visit time,"This keeps the rechecked value but not the initial recorded value, which may be inaccurate."
+patients,repeated site_code rows,Changed in the patients file,"The site codes were mapped to a dictionary later, so there was no need to change the sites csv."
